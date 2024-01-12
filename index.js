@@ -9,18 +9,18 @@ const client = require('./config/pg-config');
 
 
 
-client.connect()
-.then(() => {
-    console.log('Connected to the database');
-    // Perform database operations here
-})
-.catch((error) => {
-    console.error('Error connecting to the database:', error.message);
-})
-.finally(() => {
-    // Optionally close the connection after performing operations
-    client.end();
-});
+// client.connect()
+// .then(() => {
+//     console.log('Connected to the database');
+//     // Perform database operations here
+// })
+// .catch((error) => {
+//     console.error('Error connecting to the database:', error.message);
+// })
+// .finally(() => {
+//     // Optionally close the connection after performing operations
+//     client.end();
+// });
 
 
 //routing
