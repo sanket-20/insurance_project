@@ -5,12 +5,12 @@ function main(req, res, client)
             console.log(err);
         }
         else{
-            client.query("select * from users", (err,data)=>{
+            client.query("select * from distributor", (err,data)=>{
                 console.log(data.rows);
             })
         }
     })
-    res.send("Read User List Successfully");
+    res.send("Read distributor List Successfully");
 }
 
 module.exports={

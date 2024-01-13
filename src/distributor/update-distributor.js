@@ -1,8 +1,8 @@
-function updateOperator(req, res, client) {
+function updateDistributor(req, res, client) {
     const { id, newName} = req.body;
   
     const updateQuery = `
-      UPDATE operator
+      UPDATE distributer
       SET name = $1
       WHERE id = $2
     `;
@@ -12,12 +12,12 @@ function updateOperator(req, res, client) {
     client.query(updateQuery, values, (queryError) => {
       if (queryError) {
         console.log(queryError);
-        res.status(500).send("Error while updating Operator");
+        res.status(500).send("Error while updating Distributor");
         return;
       }
   
-      console.log("Operator updated successfully");
-      res.status(200).send("Operator updated successfully");
+      console.log("Distributor updated successfully");
+      res.status(200).send("Distributor updated successfully");
     });
   }
   
@@ -33,7 +33,7 @@ function updateOperator(req, res, client) {
         return;
       }
   
-      updateOperator(req, res, client);
+      updateDistributor(req, res, client);
     });
   }
   

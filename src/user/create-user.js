@@ -5,7 +5,6 @@ function main(req, res, client) {
         if (err) {
             console.log(err);
             res.status(500).send("Error while connecting to the database");
-            client.end();
             return;
         }
 

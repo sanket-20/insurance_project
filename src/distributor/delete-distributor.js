@@ -1,10 +1,10 @@
 
 
-function deleteOperator(req, res, client) {
+function deleteDistributor(req, res, client) {
     const { id } = req.body;
   
     const deleteQuery = `
-      DELETE FROM operator
+      DELETE FROM distributor
       WHERE id = $1
     `;
   
@@ -13,12 +13,12 @@ function deleteOperator(req, res, client) {
     client.query(deleteQuery, values, (queryError) => {
       if (queryError) {
         console.log(queryError);
-        res.status(500).send("Error while deleting operator");
+        res.status(500).send("Error while deleting distributor");
         return;
       }
   
-      console.log("Operator deleted successfully");
-      res.status(200).send("User operator successfully");
+      console.log("distributor deleted successfully");
+      res.status(200).send("User distributor successfully");
     });
   }
   
@@ -34,7 +34,7 @@ function deleteOperator(req, res, client) {
         return;
       }
   
-      deleteOperator(req, res, client);
+      deleteDistributor(req, res, client);
     });
   }
 
