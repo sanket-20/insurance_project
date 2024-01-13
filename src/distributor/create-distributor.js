@@ -8,14 +8,14 @@ function main(req, res, client) {
             return;
         }
 
-        const { id, name, mobile,mobile_2, pincode, email, secondary_email, landmark, password, address, remarks, landline, user_id, added_by, photo } = req.body;
+        const { id, name, user_id, client_id, description} = req.body;
 
         const insertQuery = `
-        INSERT INTO client (id, name, mobile,mobile_2, pincode, email, secondary_email, landmark, password, address, remarks, landline, user_id, added_by, photo)
-        VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15)
+        INSERT INTO distributer (id, name, user_id, client_id, description)
+        VALUES ($1, $2, $3, $4, $5)
       `;
 
-        const values = [id, name, mobile,mobile_2, pincode, email, secondary_email, landmark, password, address, remarks, landline, user_id, added_by, photo];
+        const values = [id, name, user_id, client_id, description];
 
         client.query(insertQuery, values, (err) => {
             if (err) {
