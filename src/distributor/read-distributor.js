@@ -8,7 +8,7 @@ function main(req, res, client) {
             return;
         }
 
-        const query = 'SELECT * FROM distributor WHERE id = $1';
+        const query = 'SELECT * FROM distributer WHERE id = $1';
         const values = [customerId];
 
         client.query(query, values, (err, data) => {

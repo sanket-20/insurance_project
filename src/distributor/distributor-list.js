@@ -5,7 +5,7 @@ function main(req, res, client)
             console.log(err);
         }
         else{
-            client.query("select * from distributor", (err,data)=>{
+            client.query("select * from distributer", (err,data)=>{
                 console.log(data.rows);
             })
         }

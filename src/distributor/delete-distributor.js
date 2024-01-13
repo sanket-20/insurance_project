@@ -4,7 +4,7 @@ function deleteDistributor(req, res, client) {
     const { id } = req.body;
   
     const deleteQuery = `
-      DELETE FROM distributor
+      DELETE FROM distributer
       WHERE id = $1
     `;
   
